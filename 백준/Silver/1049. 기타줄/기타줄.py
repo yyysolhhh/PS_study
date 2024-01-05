@@ -10,8 +10,5 @@ for _ in range(M):
     unit_price.append(unit)
 pack_price.sort()
 unit_price.sort()
-if (6 * unit_price[0] > pack_price[0]):
-    result = min(pack_price[0] * (N // 6) + unit_price[0] * (N % 6), pack_price[0] * (N // 6 + 1))
-else:
-    result = unit_price[0] * N
+result = min(pack_price[0] * (N // 6) + unit_price[0] * (N % 6), pack_price[0] * (N // 6 + 1), unit_price[0] * N)
 print(result) 
