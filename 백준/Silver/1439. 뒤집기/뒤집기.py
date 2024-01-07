@@ -1,6 +1,2 @@
 s = input()
-res = 1
-for i, c in enumerate(s[1:]):
-    if c != s[i]:
-        res += 1
-print(res // 2)
+print(max(s.count("01"), s.count("10")))
