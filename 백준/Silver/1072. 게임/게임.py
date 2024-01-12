@@ -3,7 +3,6 @@ X, Y = map(int, input().split())
 Z = math.floor(100 * Y / X)
 MAX = 1000000000
 start, end = 1, MAX
-cnt = 0
 if Z >= 99:
     print(-1)
 else:
