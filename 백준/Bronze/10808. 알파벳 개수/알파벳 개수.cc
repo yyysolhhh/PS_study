@@ -9,7 +9,7 @@ int main(void) {
   int res[26];
   fill(res, res + 26, 0);
   for (int i = 0; i < s.size(); i++) {
-    res[int(s[i] - 'a')] += 1;
+    res[s[i] - 'a'] += 1;
   }
   for (int i = 0; i < 26; i++) {
     cout << res[i] << ' ';
