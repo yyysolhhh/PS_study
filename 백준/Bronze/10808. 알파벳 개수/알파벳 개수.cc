@@ -8,8 +8,8 @@ int main(void) {
   cin >> s;
   int res[26];
   fill(res, res + 26, 0);
-  for (int i = 0; i < s.size(); i++) {
-    res[s[i] - 'a'] += 1;
+  for (auto c : s) {
+    res[c - 'a']++;
   }
   for (int i = 0; i < 26; i++) {
     cout << res[i] << ' ';
