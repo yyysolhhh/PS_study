@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main(void) {
   ios::sync_with_stdio(0);
   cin.tie(0);
@@ -11,30 +10,21 @@ int main(void) {
   int res = 0;
   for (int i = 0; i < s.length(); i++) {
     if (s[i] == '(') {
-      st.push('(');
+      st.push(2);
       temp *= 2;
     } else if (s[i] == '[') {
-      st.push('[');
+      st.push(3);
       temp *= 3;
-    } else if (s[i] == ')') {
-      if (st.empty() || st.top() != '(') {
+    } else if (s[i] == ')' || s[i] == ']') {
+      if (st.empty() || (s[i] == ')' && st.top() != 2) ||
+          (s[i] == ']' && st.top() != 3)) {
         cout << 0;
         return 0;
       }
-      if (s[i - 1] == '(') {
+      if (s[i - 1] == '(' || s[i - 1] == '[') {
         res += temp;
       }
-      temp /= 2;
-      st.pop();
-    } else if (s[i] == ']') {
-      if (st.empty() || st.top() != '[') {
-        cout << 0;
-        return 0;
-      }
-      if (s[i - 1] == '[') {
-        res += temp;
-      }
-      temp /= 3;
+      temp /= st.top();
       st.pop();
     }
   }
