@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-char board[30][30][30];
-int visited[30][30][30];
 int dx[6] = {0, 0, 0, 0, 1, -1};
 int dy[6] = {0, 0, -1, 1, 0, 0};
 int dz[6] = {1, -1, 0, 0, 0, 0};
@@ -14,6 +12,8 @@ int main(void) {
     if (!L && !R && !C) {
       return 0;
     }
+    char board[30][30][30];
+    int visited[30][30][30];
     bool isEscape = false;
     queue<tuple<int, int, int>> Q;
     for (int i = 0; i < L; i++) {
