@@ -1,3 +1,4 @@
+// Unsolved
 #include <bits/stdc++.h>
 using namespace std;
 int N, K;
@@ -14,6 +15,10 @@ int main(void) {
   while (!dq.empty()) {
     int cur = dq.front();
     dq.pop_front();
+    if (cur == K) {
+      cout << visited[cur];
+      return 0;
+    }
     if (cur * 2 < MX && visited[cur * 2] == -1) {
       visited[cur * 2] = visited[cur];
       dq.push_front(cur * 2);
@@ -24,5 +29,4 @@ int main(void) {
       dq.push_back(next);
     }
   }
-  cout << visited[K];
 }
