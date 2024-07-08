@@ -1,4 +1,3 @@
-// Unsolved
 #include <bits/stdc++.h>
 using namespace std;
 int N, K;
@@ -29,4 +28,5 @@ int main(void) {
       dq.push_back(next);
     }
   }
+  return 0;
 }
