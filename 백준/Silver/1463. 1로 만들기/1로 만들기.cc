@@ -5,20 +5,16 @@ int main(void) {
   cin.tie(0);
   int N;
   cin >> N;
-  int count[N];
-  fill(count, count + N, -1);
-  queue<int> Q;
-  Q.push(N);
-  count[N] = 0;
-  while (!Q.empty()) {
-    double cur = Q.front();
-    Q.pop();
-    for (double next : {cur / 3, cur / 2, cur - 1}) {
-      if (next - int(next) != 0) continue;
-      if (count[int(next)] >= 0) continue;
-      count[int(next)] = count[int(cur)] + 1;
-      Q.push(next);
+  int D[N + 1];
+  fill(D, D + N + 1, 0);
+  for (int i = 2; i <= N; i++) {
+    D[i] = D[i - 1] + 1;
+    if (i % 3 == 0) {
+      D[i] = min(D[i], D[i / 3] + 1);
+    }
+    if (i % 2 == 0) {
+      D[i] = min(D[i], D[i / 2] + 1);
     }
   }
-  cout << count[1] << '\n';
+  cout << D[N];
 }
