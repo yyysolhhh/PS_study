@@ -14,10 +14,6 @@ int main(void) {
     int num;
     cin >> num;
     cur += num;
-    if (cur >= N) {
-      cout << i;
-      break;
-    }
     cur += board[cur];
     if (cur >= N) {
       cout << i;
