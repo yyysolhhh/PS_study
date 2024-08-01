@@ -13,6 +13,7 @@ int main(void) {
   while (!Q.empty()) {
     int cur = Q.front();
     Q.pop();
+    if (cur == G) break;
     for (int next : {cur + U, cur - D}) {
       if (next > F || next < 1) continue;
       if (visited[next] >= 0) continue;
