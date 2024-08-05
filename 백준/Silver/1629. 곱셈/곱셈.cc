@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-long long A, B, C;
-long long solve(long long b) {
+#define ll long long
+ll A, B, C;
+ll solve(ll b) {
   if (b == 1) return A % C;
-  long long val = solve(b / 2);
+  ll val = solve(b / 2);
   val = val * val % C;
   if (b % 2 == 0) return val;
   return val * A % C;
