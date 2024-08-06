@@ -1,19 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-int order;
-void solve(int size, int r, int c) {
-  if (size == 1) return;
-  if (r < size / 2 && c < size / 2) {
-    solve(size / 2, r, c);
-  } else if (r < size / 2 && c >= size / 2) {
-    order += size / 2 * size / 2;
-    solve(size / 2, r, c - size / 2);
-  } else if (r >= size / 2 && c < size / 2) {
-    order += size / 2 * size / 2 * 2;
-    solve(size / 2, r - size / 2, c);
+
+int solve(int n, int r, int c) {
+  int half = pow(2, n - 1);
+  if (n == 0) return 0;
+  if (r < half && c < half) {
+    return solve(n - 1, r, c);
+  } else if (r < half && c >= half) {
+    return solve(n - 1, r, c - half) + half * half;
+  } else if (r >= half && c < half) {
+    return solve(n - 1, r - half, c) + half * half * 2;
   } else {
-    order += size / 2 * size / 2 * 3;
-    solve(size / 2, r - size / 2, c - size / 2);
+    return solve(n - 1, r - half, c - half) + half * half * 3;
   }
 }
 int main(void) {
@@ -21,8 +19,6 @@ int main(void) {
   cin.tie(0);
   int N, r, c;
   cin >> N >> r >> c;
-  int size = pow(2, N);
-  solve(size, r, c);
-  cout << order << '\n';
+  cout << solve(N, r, c);
   return 0;
 }
