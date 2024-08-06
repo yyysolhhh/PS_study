@@ -2,7 +2,7 @@
 using namespace std;
 
 int solve(int n, int r, int c) {
-  int half = pow(2, n - 1);
+  int half = 1 << (n - 1);
   if (n == 0) return 0;
   if (r < half && c < half) {
     return solve(n - 1, r, c);
