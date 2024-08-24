@@ -12,7 +12,6 @@ int main(void) {
   for (int i = 1; i < 10; i++) {
     ans *= p[i] / i;
   }
-  cout.precision(6);
   cout << fixed;
   cout << ans * pow(10, 9);
   return 0;
