@@ -16,10 +16,10 @@ int main(void) {
       cin >> candy;
       sum += candy % n;
     }
-    if (sum % n == 0)
-      cout << "YES\n";
-    else
+    if (sum % n)
       cout << "NO\n";
+    else
+      cout << "YES\n";
   }
   return 0;
 }
