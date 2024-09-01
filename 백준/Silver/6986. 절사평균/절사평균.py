@@ -12,5 +12,5 @@ for i in range(K, N - K):
     trimmed += scores[i]
 trimmed /= N - 2 * K
 adjusted /= N
-print("{:.2f}".format(trimmed + 1e-8))
+print(f"{trimmed + 1e-8:.2f}")
 print(f"{adjusted + 1e-8:.2f}")
