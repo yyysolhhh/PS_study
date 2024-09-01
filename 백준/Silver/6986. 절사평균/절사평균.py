@@ -10,7 +10,7 @@ trimmed = 0
 for i in range(K, N - K):
     adjusted += scores[i]
     trimmed += scores[i]
-trimmed = trimmed / (N - 2 * K) + 0.00000001
-adjusted = adjusted / N + 0.00000001
-print("{:.2f}".format(trimmed))
-print(f"{adjusted:.2f}")
+trimmed /= N - 2 * K
+adjusted /= N
+print("{:.2f}".format(trimmed + 1e-8))
+print(f"{adjusted + 1e-8:.2f}")
