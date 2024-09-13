@@ -3,12 +3,11 @@ using namespace std;
 int main(void) {
   ios::sync_with_stdio(0);
   cin.tie(0);
-  int N, ans1 = 0, ans2 = 0;
+  int N;
   cin >> N;
-  for (int i = 1; i <= N; i++) {
-    ans1 += i;
-    ans2 += i * i * i;
-  }
-  cout << ans1 << '\n' << ans1 * ans1 << '\n' << ans2;
+  int ans = (1 + N) * N / 2;
+  cout << ans << '\n';
+  cout << int(pow(ans, 2)) << '\n';
+  cout << int(pow(ans, 2)) << '\n';
   return 0;
 }
