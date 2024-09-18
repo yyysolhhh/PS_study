@@ -7,7 +7,7 @@ int main(void) {
   cin >> N;
   long long ans = 0;
   for (int i = 0; i < N * N; i++) {
-    long long num;
+    int num;
     cin >> num;
     ans += num;
   }
