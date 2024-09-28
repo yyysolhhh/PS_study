@@ -7,7 +7,7 @@ int main(void) {
   cin.tie(0);
   ll X, K;
   cin >> X >> K;
-  ll color;
+  int color;
   ll ans;
   for (int i = 0; i < 2; i++) {
     for (int j = 0; j < X; j++) {
