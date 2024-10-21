@@ -1,2 +1,1 @@
-x = int(input())
-print(24 * x)
+print(24 * int(input()))
