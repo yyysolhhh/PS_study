@@ -1,8 +1,8 @@
-answer = 0
+ans = 0
 while True:
     try:
         gum_gum = input()
-        answer += 1
+        ans += 1
     except EOFError:
         break
-print(answer)
+print(ans)
