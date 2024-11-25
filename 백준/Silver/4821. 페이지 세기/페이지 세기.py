@@ -10,12 +10,12 @@ while True:
         if "-" in r:
             low, high = map(int, r.split("-"))
             for i in range(low, high + 1):
-                if i > pages or i < 1:
+                if i > pages:
                     continue
                 check[i] = True
         else:
             r = int(r)
-            if r > pages or r < 1:
+            if r > pages:
                 continue
             check[r] = True
     print(check.count(True))
