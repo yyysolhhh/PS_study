@@ -1,5 +1,3 @@
-while True:
-    try:
-        print(input())
-    except EOFError:
-        break
+import sys
+lines = sys.stdin.readlines()
+print("".join(lines))
