@@ -5,4 +5,4 @@ for _ in range(K):
     for i in range(len(seq) - 1):
         temp.append(seq[i + 1] - seq[i])
     seq = temp
-print(",".join(map(str, seq)))
+print(*seq, sep=",")
