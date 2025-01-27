@@ -5,5 +5,5 @@ def solve(n):
 
 N = int(input())
 X = list(map(int, input().split()))
-for i in X:
-    print(solve(i), end=" ")
+ans = map(solve, X)
+print(*ans)
