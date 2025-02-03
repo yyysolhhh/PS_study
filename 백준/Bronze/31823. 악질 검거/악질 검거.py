@@ -9,7 +9,6 @@ for _ in range(N):
         if i == ".":
             temp += 1
         elif i == "*":
-            max_streak = max(max_streak, temp)
             temp = 0
         max_streak = max(max_streak, temp)
     streak[name] = max_streak
