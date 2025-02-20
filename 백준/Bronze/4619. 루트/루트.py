@@ -5,8 +5,5 @@ while True:
     i = 0
     while i ** N < B:
         i += 1
-    if i ** N - B > B - (i - 1) ** N:
-        A = i - 1
-    else:
-        A = i
+    A = i if i ** N - B < B - (i - 1) ** N else i - 1
     print(A)
