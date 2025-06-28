@@ -8,4 +8,4 @@ for _ in range(20):
     total_credits += float(credit)
     ans += float(credit) * float(grades[grade])
 ans /= total_credits
-print(round(ans, 5))
+print(ans)
