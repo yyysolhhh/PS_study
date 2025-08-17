@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 def print_cnt(S, l, r):
     cnt = 1
     for i in range(l, r):
