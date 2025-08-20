@@ -14,5 +14,5 @@ while True:
             if flag:
                 ans += 1
         print(ans)
-    except EOFError:
+    except Exception:
         break
