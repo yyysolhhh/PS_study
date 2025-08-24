@@ -1,41 +1,33 @@
 import sys
-input = sys.stdin.readline
 
-N = int(input())
-A = list(map(int, input().split()))
-U, D = map(int, input().split())
+def solve():
 
-result = []
-possible = True
+    input = sys.stdin.readline
 
-for i in A:
-    if i == 1:
-        if U > 0:
-            U -= 1
-            result.append('U')
-        else:
-            possible = False
-            break
-    elif i == 2:
-        if D > 0:
-            D -= 1
-            result.append('D')
-        else:
-            possible = False
-            break
-    else:
-        if U > 0:
-            U -= 1
-            result.append('U')
-        elif D > 0:
-            D -= 1
-            result.append('D')
-        else:
-            possible = False
-            break
-
-if possible:
+    n = int(input())
+    hangers = list(map(int, input().split()))
+    u, d = map(int, input().split())
+    tops_only_hangers = hangers.count(1)
+    bottoms_only_hangers = hangers.count(2)
+    if u < tops_only_hangers or d < bottoms_only_hangers:
+        print("NO")
+        return
     print("YES")
-    print(''.join(result))
-else:
-    print("NO")
+    remaining_tops = u - tops_only_hangers
+    
+    result = []
+    for hanger_type in hangers:
+        if hanger_type == 1:
+            result.append('U')
+        elif hanger_type == 2:
+            result.append('D')
+        elif hanger_type == 3:
+            if remaining_tops > 0:
+                result.append('U')
+                remaining_tops -= 1
+            else:
+                result.append('D')
+    
+    print("".join(result))
+
+solve()
