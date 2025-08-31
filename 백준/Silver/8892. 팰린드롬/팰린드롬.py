@@ -1,21 +1,21 @@
-t1 = int(input())
-for i in range(t1):
-    l=[]
-    t2 = int(input())
-    for x in range(t2):
-        l.append(input())
-    dap = 0
-    for y in range(t2):
-        for x in range(t2):
-            if x != y:
-                a = l[y]+l[x]
-                s = 0
-                for i in range(0,len(a)//2):
-                    if a[i] != a[-i-1]:
-                        s = 1
-                if s == 0:
-                    dap = a
-    if dap != 0:
-        print(dap)
+import sys
+input = sys.stdin.readline
+T = int(input())
+for _ in range(T):
+    k = int(input())
+    words = [input().strip() for _ in range(k)]
+    ans = ""
+    for i in range(k - 1):
+        for j in range(i + 1, k):
+            c1 = words[i] + words[j]
+            c2 = words[j] + words[i]
+            if c1 == "".join(reversed(c1)):
+                ans = c1
+            elif c2 == "".join(reversed(c2)):
+                ans = c2
+        if ans:
+            break
+    if ans:
+        print(ans)
     else:
         print(0)
