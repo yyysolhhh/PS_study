@@ -4,7 +4,7 @@ for i in range(L, 101):
     if ix % i == 0:
         x = ix // i
         if x + 1 >= 0:
-            print(*list(range(x + 1, x + i + 1)))
+            print(*range(x + 1, x + i + 1))
             break
 else:
     print(-1)
