@@ -1,31 +1,27 @@
 import sys
+input = sys.stdin.readline
+
+def is_palindrome(n):
+    return list(n) == list(reversed(n))
 
 def decimal_to_base(decimal, base):
-    rest_list = []
+    base_num = []
+    while decimal > 0:
+        base_num.append(decimal % base)
+        decimal //= base
+    return base_num
 
-    while 0 < decimal:
-        rest_list.append(decimal % base)
-        decimal = decimal // base
 
-    return rest_list
-
-def is_palindrome_list(li):
-    return 1 if li == li[::-1] else 0
-
-T = int(sys.stdin.readline())
-
+T = int(input())
 for _ in range(T):
-    number = int(sys.stdin.readline())
-
-    is_palindrome = False
-
-    for i in range(2, 64 + 1):
-        
-        if is_palindrome_list(decimal_to_base(number, i)):
-            is_palindrome = True
-            break
-    
-    if is_palindrome:
+    num = input().strip()
+    if is_palindrome(num):
         print(1)
+        continue
+    for i in range(2, 65):
+        res = decimal_to_base(int(num), i)
+        if is_palindrome(res):
+            print(1)
+            break
     else:
         print(0)
