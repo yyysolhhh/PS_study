@@ -26,11 +26,11 @@ void dijstra(int start) {
 void find_path(int start, int end) {
   int idx = end;
   deque<int> path;
-  path.push_front(end);
   while (idx != start) {
-    path.push_front(pre[idx]);
+    path.push_front(idx);
     idx = pre[idx];
   }
+  path.push_front(start);
   cout << path.size() << "\n";
   for (auto x : path) {
     cout << x << " ";
