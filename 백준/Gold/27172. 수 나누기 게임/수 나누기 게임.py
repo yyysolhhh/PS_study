@@ -1,16 +1,14 @@
 import sys
 input = sys.stdin.readline
-
 N = int(input())
-x = list(map(int, input().rstrip().split()))
-S = set(x)
-M = max(x)
-sieve = [0 for _ in range(M+1)]
+x = list(map(int, input().split()))
+set_x = set(x)
+max_x = max(x)
+scores = [0 for _ in range(max_x + 1)]
 for i in x:
-    if i == M: continue
-    for j in range(2*i, M+1, i):
-        if j in S:
-            sieve[i] += 1
-            sieve[j] -= 1
+    for j in range(i * 2, max_x + 1, i):
+        if j in set_x:
+            scores[i] += 1
+            scores[j] -= 1
 for i in x:
-    print(sieve[i], end = ' ')
+    print(scores[i], end=" ")
