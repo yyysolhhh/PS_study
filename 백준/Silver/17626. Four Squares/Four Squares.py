@@ -1,25 +1,20 @@
-import math
-
 n = int(input())
-
-def is_square(num):
-    if math.sqrt(num)==int(math.sqrt(num)):
-        return True
-    else:
-        return False
-
-_min=4
-if is_square(n):
-    _min=1
+sq = [0 for _ in range(n + 1)]
+for i in range(int(n ** 0.5) + 1):
+    sq[i ** 2] = 1
+ans = 4
+if sq[n]:
+    ans = 1
 else:
-    for i in range(int(math.sqrt(n)),0,-1):
-        if is_square(n-(i**2)):
-            _min=2
+    for i in range(int(n ** 0.5), 0, -1):
+        remain1 = n - i ** 2
+        if sq[remain1] == 1:
+            ans = 2
             break
         else:
-            for j in range(int(math.sqrt(n-i**2)),0,-1):
-                if is_square(n-(i**2)-(j**2)):
-                    _min=3
+            for j in range(int((n - i ** 2) ** 0.5), 0, -1):
+                remain2 = n - i ** 2 - j ** 2
+                if remain2 >= 0 and sq[remain2]:
+                    ans = 3
                     break
-
-print(_min)
+print(ans)
