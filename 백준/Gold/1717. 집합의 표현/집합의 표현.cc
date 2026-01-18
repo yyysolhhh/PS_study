@@ -13,10 +13,6 @@ bool uni(int u, int v) {
   v = find(v);
   if (u == v)
     return false;
-  if (p[v] < p[u])
-    swap(u, v);
-  if (p[u] == p[v])
-    p[u]--;
   p[v] = u;
   return true;
 }
