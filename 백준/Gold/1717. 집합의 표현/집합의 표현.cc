@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n, m;
 vector<int> p(1000001, -1);
 
 int find(int x) {
@@ -25,6 +24,7 @@ bool uni(int u, int v) {
 int main() {
   ios::sync_with_stdio(0);
   cin.tie(0);
+  int n, m;
   cin >> n >> m;
   for (int i = 0; i < m; i++) {
     int s, a, b;
