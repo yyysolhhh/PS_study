@@ -1,18 +1,18 @@
 while True:
-    bitString = input()
-    if bitString == '#':
+    bit = input()
+    if bit == "#":
         break
-    p = bitString[-1]
-    bitString = bitString[:-1]
-    bitCnt = bitString.count('1')
-    if p == 'e':
-        if bitCnt % 2 == 0:
-            bitString += '0'
+    t = bit[-1]
+    bit = bit[:-1]
+    cnt = bit.count("1")
+    if cnt & 1 == 0:
+        if t == "e":
+            bit += "0"
         else:
-            bitString += '1'
+            bit += "1"
     else:
-        if bitCnt % 2 == 0:
-            bitString += '1'
+        if t == "e":
+            bit += "1"
         else:
-            bitString += '0'
-    print(bitString)
+            bit += "0"
+    print(bit)
