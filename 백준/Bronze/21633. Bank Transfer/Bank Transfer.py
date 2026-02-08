@@ -1,10 +1,7 @@
 k = int(input())
-
-fees = 25 + k*0.01
-
-if fees < 100:
-    print(100)
-elif fees > 2000:
-    print(2000)
-else:
-    print(fees)
+ans = 25 + k * 0.01
+if ans < 100:
+    ans = 100
+if ans > 2000:
+    ans = 2000
+print(f"{ans:.2f}")
