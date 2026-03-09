@@ -1,13 +1,10 @@
-card_set = set(map(int, input().split()))
-number_list = [i if i in card_set else 0 for i in range(9 + 1)]
-
-minimum_count = 6
-
-for i in range(1, 6):
-    number_sequence = number_list[i:i + 5]
-    count = number_sequence.count(0)
-
-    if count < minimum_count:
-        minimum_count = count
-
-print(minimum_count)
+cards = list(map(int, input().split()))
+nums = [1 for _ in range(10)]
+ans = 6
+for i in cards:
+    nums[i] = 0
+for i in range(6):
+    tmp = sum(nums[i:i + 5])
+    if tmp < ans:
+        ans = tmp
+print(ans)
