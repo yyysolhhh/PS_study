@@ -8,8 +8,6 @@ if N & 1:
             ans = "failed"
             break
 else:
-    for i, j in zip(before, after):
-        if i != j:
-            ans = "failed"
-            break
+    if before != after:
+        ans = "failed"
 print(f"Deletion {ans}")
