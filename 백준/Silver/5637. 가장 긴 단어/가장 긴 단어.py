@@ -9,6 +9,8 @@ while True:
 ans = ""
 l = 0
 for w in para[:-1]:
+    if w == "E-N-D":
+        continue
     if l < len(w):
         ans = w
         l = len(w)
