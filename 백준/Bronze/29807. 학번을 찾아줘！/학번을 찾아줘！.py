@@ -1,21 +1,14 @@
-res = 0
-
-t = int(input())
-sub = list(map(int, input().split())) + [0] * (5 - t)
-
-if sub[0] > sub[2]:
-    res += (sub[0] - sub[2]) * 508
+T = int(input())
+scores = list(map(int, input().split()))
+scores += [0] * 5
+if scores[0] > scores[2]:
+    n1 = (scores[0] - scores[2]) * 508
 else:
-    res += (sub[2] - sub[0]) * 108
-
-if sub[1] > sub[3]:
-    res += (sub[1] - sub[3]) * 212
+    n1 = (scores[2] - scores[0]) * 108
+if scores[1] > scores[3]:
+    n2 = (scores[1] - scores[3]) * 212
 else:
-    res += (sub[3] - sub[1]) * 305
-
-if sub[4] > 0:
-    res += sub[4] * 707
-
-res *= 4763
-
-print(res)
+    n2 = (scores[3] - scores[1]) * 305
+n3 = scores[4] * 707
+ans = (n1 + n2 + n3) * 4763
+print(ans)
