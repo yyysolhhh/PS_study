@@ -1,0 +1,5 @@
+A = input()
+B = input()
+x = abs(ord(A[0]) - ord(B[0]))
+y = abs(int(A[1]) - int(B[1]))
+print(min(x, y), max(x, y))
